@@ -1,0 +1,49 @@
+return {
+  summary = "Bring a Gen 1 Recomp trainer, collection, and complete Kanto story through Cerulean Cave into FireRed.",
+  author = "Kanto Legacy contributors",
+  tags = { "tool", "save-transfer", "gen1", "gen3", "firered" },
+
+  differences = {
+    added = {
+      "Fly opens the native Town Map with directional cursor selection of visited cities.",
+      "ROM bird takeoff, screen fades and landing play before controls resume.",
+      "Adds KANTO LEGACY to FireRed's title/main menu before Oak's introduction.",
+      "Shows a visual source chooser for every active Red, Blue, and Yellow save.",
+      "Reads active Red, Blue, and Yellow slots through SaveData.readSlotSource.",
+      "Creates and activates a separate FireRed slot; source and existing FireRed slots are not overwritten.",
+      "Transfers trainer name and ID, rival name, money, coins, playtime, party, all twelve Gen 1 boxes, and Pokedex history.",
+      "Converts Gen 1 DVs to Gen 3 IVs and Stat Exp to a legal 510-point Gen 3 EV spread.",
+      "Transfers compatible ordinary items and maps Gen 1 TM/HM moves to the matching FireRed machines.",
+      "Encodes Gen 2-compatible shininess in native PID and owner IDs while preserving generated nature, gender and ability slot.",
+      "Preserves PP Ups in the cartridge packed field, including after skipped-move compaction.",
+      "Translates all eight Kanto badges to native FireRed flags and HM permissions.",
+      "Routes Gen 1 PC-stored TMs and HMs into FireRed's TM Case.",
+      "Converts 888 canonical story and postgame events from Pallet Town through Cerulean Cave and Mewtwo.",
+      "Preserves Gen 1 Hall of Fame history and materializes FireRed's native game-clear state.",
+      "Assigns every transferred Gen 1 Pokemon to the imported FireRed trainer as its native owner.",
+      "Transfers an occupied RBY Day Care Pokemon into the FireRed PC with deferred step experience realized.",
+      "Maps every Silph Co. trainer by NPC battle role instead of mismatched floor-list position.",
+      "Uses the engine's native Town Map and ROM cache; the release contains no packaged ROM-derived graphics.",
+    },
+    changed = {
+      "The complete RBY base story is resolved from source evidence and applied through reviewed FireRed rule tables.",
+      "The imported Gen 1 party is active immediately; no FireRed starter must be chosen first.",
+      "Normal NEW GAME still follows FireRed's original Oak sequence.",
+      "Gen 1 key items and badge pseudo-items are retained in import audit metadata instead of injected into FireRed story state.",
+      "Existing LEGACY saves repair imported Pokemon ownership without changing Pokemon obtained later in FireRed.",
+      "Historical Silph and Cave repairs use only import-time evidence; missing evidence remains unresolved.",
+      "Persistence failures clean up only the new slot; committed saves remain recoverable if field entry fails.",
+    },
+    known = {
+      "FireRed-only postgame content, Sevii quests, National Dex progression, and Elite Four rematches remain native and uncompleted.",
+      "Yellow keeps Pikachu as the actual imported starter while FireRed's Squirtle/Venusaur branch routes native rival scripts; no replacement starter is granted.",
+      "Unsupported modded species or moves are skipped and listed in the import audit metadata.",
+      "FireRed's 510 total EV cap means heavily trained Gen 1 Pokemon cannot retain every Gen 1 Stat Exp bonus at full strength.",
+    },
+  },
+
+  compat = {
+    engine = ">=0.2.62 <1.0.0",
+    modApi = 2,
+  },
+}

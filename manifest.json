@@ -1,0 +1,17 @@
+{
+  "id": "firered_legacy_importer",
+  "name": "Kanto Legacy Importer",
+  "version": "1.5.2",
+  "api": 2,
+  "entry": "main.lua",
+  "description": "RBY-to-FireRed save importer with complete Kanto story and Cerulean Cave conversion, native collection import, and safe position translation.",
+  "games": [
+    "firered"
+  ],
+  "game_version": ">=0.2.62 <1.0.0",
+  "permissions": [
+    "filesystem",
+    "engine_internals"
+  ],
+  "category": "TOOL"
+}
